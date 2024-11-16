@@ -1,0 +1,156 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 50142469065494,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "dreamshaper_8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 4
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "12",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark, unrealistic, blur",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "input_text": "kırmızı tesla araba, deniz, yaz mevsimi, asfalt yol",
+      "source_language": "turkish",
+      "destination_language": "english"
+    },
+    "class_type": "googletrans",
+    "_meta": {
+      "title": "Google Translate"
+    }
+  },
+  "11": {
+    "inputs": {
+      "model": "llama-3.1-8b-instant",
+      "preset": "Use [system_message] and [user_input]",
+      "system_message": "You are an artificial intelligence that generates prompts to produce images. Create stable diffusion prompts that will produce detailed images about the given input text",
+      "user_input": [
+        "10",
+        0
+      ],
+      "temperature": 0.85,
+      "max_tokens": 1024,
+      "top_p": 1,
+      "seed": 845768226,
+      "max_retries": 2,
+      "stop": "",
+      "json_mode": false
+    },
+    "class_type": "✨💬 Groq LLM API",
+    "_meta": {
+      "title": "✨💬 Groq LLM API"
+    }
+  },
+  "12": {
+    "inputs": {
+      "text": [
+        "11",
+        0
+      ],
+      "text2": "Here's a stable diffusion prompt to generate a detailed image based on your description:\n\n\"Generate a highly realistic, 4K image of a sleek, red Tesla car parked on the edge of a serene, crystal-clear sea, with the warm sunlight of a summer day casting a golden glow on the scene. The asphalt road stretches out to the horizon, reflecting the vibrant colors of the sky and the sea. The car's chrome details and wheels should be accurately rendered, with a subtle sense of depth and dimensionality. The surrounding environment should be teeming with lush greenery and a few scattered beach umbrellas, adding to the idyllic summer atmosphere. The entire scene should be bathed in a soft, dreamy light, with a slight haze to capture the essence of a warm summer day.\"\n\nAlternatively, you can break down the prompt into smaller components for more control over the output:\n\n1. \"A red Tesla car:\"\n   - \"with a glossy, metallic red finish\"\n   - \"parked on a slight incline\"\n   - \"with the driver's side door slightly ajar\"\n\n2. \"parked on a scenic road:\"\n   - \"overlooking a serene, crystal-clear sea\"\n   - \"with a few palm trees and beach umbrellas nearby\"\n   - \"leading to a distant horizon\"\n\n3. \"set against a summer backdrop:\"\n   - \"under a clear blue sky with puffy white clouds\"\n   - \"with warm sunlight casting long shadows\"\n   - \"and a gentle sea breeze rustling the palm fronds\"\n\nThis breakdown can help you fine-tune the output to your liking."
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  }
+}
