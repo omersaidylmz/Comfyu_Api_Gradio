@@ -8,7 +8,7 @@
 
 ### Bugün sizlere Comfyu Api ile Gradio  Ara yüz üzerinden görüntü üreten çalışmamı göstermek istiyorum.
 
-### Amacımız Görüntü Üreten ( Text-To-İmage) Open- Source modellerin türkçe promtlar ile sağlıklı kullanılamaması ve promptların detaylı verilmememsinden kaynaklı görüntü çıktılarınının performanslarının kötü olması problemini çözmektir. Bunun için türkçe prompt translate işlemi ve sonrasında detaylı prompt elde edilmesi adına LLM modeline girdi olarak veriliyor. Böylece oluşturulan görsel performansını arttırmış oluyoruz.
+### Amacımız Görüntü Üreten ( Text-To-İmage) Open- Source modellerin türkçe promtlar ile sağlıklı kullanılamaması ve promptların detaylı verilmemesinden kaynaklı görüntü çıktılarının performanslarının kötü olması problemini çözmektir. Bunun için türkçe prompt translate işlemi ve sonrasında detaylı prompt elde edilmesi adına LLM modeline girdi olarak veriliyor. Böylece oluşturulan görsel performansını arttırmış oluyoruz.
 
 ### Bu sayede Kullanıcı basit türkçe promptlar ile detaylı görselleri elde etmiş oluyor.
 
